@@ -1,0 +1,282 @@
+<div class="logo" style="padding: 5px">
+  <a class="simple-text" href="#">
+    <!-- <div class="logo-img">
+				 <img src="/assets/img/angular2-logo-red.png">
+		 </div>  -->
+    <!-- Dev Architecture -->
+
+   <div class="site-logo-text">
+     <img
+      src="/assets/img/logo/logo.jpg"
+      style="width: 180px;"
+    />
+  </div> 
+  </a>
+</div>
+<div class="sidebar-wrapper">
+  <div class="nav-container">
+    <ul class="nav">
+      <li routerLinkActive="active">
+        <a data-toggle="collapse" class="nav-link" href="#Management">
+          <i class="material-icons">widgets</i>
+          <p>
+            {{ "Management" | translate }}
+            <b class="caret"></b>
+          </p>
+        </a>
+        <div class="collapse" id="Management">
+          <ul class="nav">
+            <li
+              *ngFor="let menuItem of adminMenuItems"
+              class="{{ menuItem.class }} nav-item"
+            >
+              <a
+                *ngIf="checkClaim(menuItem.claim)"
+                class="nav-link"
+                [routerLink]="[menuItem.path]"
+              >
+                <i class="material-icons">{{ menuItem.icon }}</i>
+                <p>{{ menuItem.title | translate }}</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+	</ul>
+	
+	<ul class="nav">
+		<li routerLinkActive="active">
+		  <a data-toggle="collapse" class="nav-link" href="#AppMenu">
+			<i class="material-icons">extension</i>
+			<p>
+			  {{ "AppMenu" | translate }}
+			  <b class="caret"></b>
+			</p>
+		  </a>
+		  <div class="collapse" id="AppMenu">
+			<ul class="nav">
+			  <li
+				*ngFor="let menuItem of userMenuItems"
+				class="{{ menuItem.class }} nav-item"
+			  >
+				<a
+				  *ngIf="checkClaim(menuItem.claim)"
+				  class="nav-link"
+				  [routerLink]="[menuItem.path]"
+				>
+				  <i class="material-icons">{{ menuItem.icon }}</i>
+				  <p>{{ menuItem.title | translate }}</p>
+				</a>
+			  </li>
+        <li class=" nav-item">
+          <a    
+            class="nav-link" routerLink="anasayfa" 
+          >
+            <p style="font-size: 15px; margin: 0;;
+            line-height: 30px;
+            font-size: 15px;
+            position: relative;
+            display: block;
+            height: auto;
+            white-space: nowrap;" ><i style="margin-right: 10px; font-size: 17px;"  class="fa-brands fa-audible"></i>Anasayfa</p>
+          </a>
+        </li> 
+        <li class=" nav-item">
+          <a    
+            class="nav-link" routerLink="blog" 
+          >
+            <p style="font-size: 15px; margin: 0;;
+            line-height: 30px;
+            font-size: 15px;
+            position: relative;
+            display: block;
+            height: auto;
+            white-space: nowrap;" ><i style="margin-right: 10px; font-size: 17px;"  class="fa-brands fa-audible"></i>Blog</p>
+          </a>
+        </li> 
+        <li class=" nav-item">
+          <a    
+            class="nav-link" routerLink="blogDetay" 
+          >
+            <p style="font-size: 15px; margin: 0;;
+            line-height: 30px;
+            font-size: 15px;
+            position: relative;
+            display: block;
+            height: auto;
+            white-space: nowrap;" ><i style="margin-right: 10px; font-size: 17px;"  class="fa-brands fa-audible"></i>Blog Detay</p>
+          </a>
+
+        </li>
+        <!-- <li class=" nav-item">
+          <a    
+            class="nav-link" routerLink="blogdetay" 
+          >
+            <p style="font-size: 15px; margin: 0;;
+            line-height: 30px;
+            font-size: 15px;
+            position: relative;
+            display: block;
+            height: auto;
+            white-space: nowrap;" ><i style="margin-right: 10px; font-size: 17px;"  class="fa-brands fa-audible"></i>Blog Detayı</p>
+          </a>
+
+        </li>  -->
+        <li class=" nav-item">
+          <a    
+            class="nav-link" routerLink="ev" 
+          >
+            <p style="font-size: 15px; margin: 0;;
+            line-height: 30px;
+            font-size: 15px;
+            position: relative;
+            display: block;
+            height: auto;
+            white-space: nowrap;" ><i style="margin-right: 10px; font-size: 17px;"  class="fa-brands fa-audible"></i>Ev</p>
+          </a>   
+        </li> 
+       
+        <!-- <li class=" nav-item">
+          <a    
+            class="nav-link" routerLink="evDetay" 
+          >
+            <p style="font-size: 15px; margin: 0;;
+            line-height: 30px;
+            font-size: 15px;
+            position: relative;
+            display: block;
+            height: auto;
+            white-space: nowrap;" ><i style="margin-right: 10px; font-size: 17px;"  class="fa-brands fa-audible"></i>Ev Detay</p>
+          </a>   
+        </li>  -->
+        <li class=" nav-item">
+          <a    
+            class="nav-link" routerLink="gallary" 
+          >
+            <p style="font-size: 15px; margin: 0;;
+            line-height: 30px;
+            font-size: 15px;
+            position: relative;
+            display: block;
+            height: auto;
+            white-space: nowrap;" ><i style="margin-right: 10px; font-size: 17px;"  class="fa-brands fa-audible"></i>Gallary</p>
+          </a>
+
+        </li> 
+        <li class=" nav-item">
+          <a    
+            class="nav-link" routerLink="gallaryBlog" 
+          >
+            <p style="font-size: 15px; margin: 0;;
+            line-height: 30px;
+            font-size: 15px;
+            position: relative;
+            display: block;
+            height: auto;
+            white-space: nowrap;" ><i style="margin-right: 10px; font-size: 17px;"  class="fa-brands fa-audible"></i>Gallary Blog</p>
+          </a>   
+        </li>  
+
+         <li class=" nav-item">
+          <a    
+            class="nav-link" routerLink="giris" 
+          >
+            <p style="font-size: 15px; margin: 0;;
+            line-height: 30px;
+            font-size: 15px;
+            position: relative;
+            display: block;
+            height: auto;
+            white-space: nowrap;" ><i style="margin-right: 10px; font-size: 17px;"  class="fa-brands fa-audible"></i>Giriş</p>
+          </a>   
+        </li> 
+        <li class=" nav-item">
+          <a    
+            class="nav-link" routerLink="iletisim" 
+          >
+            <p style="font-size: 15px; margin: 0;;
+            line-height: 30px;
+            font-size: 15px;
+            position: relative;
+            display: block;
+            height: auto;
+            white-space: nowrap;" ><i style="margin-right: 10px; font-size: 17px;"  class="fa-brands fa-audible"></i>İletişim</p>
+          </a>   
+        </li> 
+        <!-- <li class=" nav-item">
+          <a    
+            class="nav-link" routerLink="odaEkService" 
+          >
+            <p style="font-size: 15px; margin: 0;;
+            line-height: 30px;
+            font-size: 15px;
+            position: relative;
+            display: block;
+            height: auto;
+            white-space: nowrap;" ><i style="margin-right: 10px; font-size: 17px;"  class="fa-brands fa-audible"></i>Oda Ek Service</p>
+          </a>
+
+        </li>  -->
+        <!-- <li class=" nav-item">
+          <a    
+            class="nav-link" routerLink="odaOlanaklar" 
+          >
+            <p style="font-size: 15px; margin: 0;;
+            line-height: 30px;
+            font-size: 15px;
+            position: relative;
+            display: block;
+            height: auto;
+            white-space: nowrap;" ><i style="margin-right: 10px; font-size: 17px;"  class="fa-brands fa-audible"></i>Oda Olanaklar</p>
+          </a>
+
+        </li>  -->
+        <li class=" nav-item">
+          <a    
+            class="nav-link" routerLink="olanaklar" 
+          >
+            <p style="font-size: 15px; margin: 0;;
+            line-height: 30px;
+            font-size: 15px;
+            position: relative;
+            display: block;
+            height: auto;
+            white-space: nowrap;" ><i style="margin-right: 10px; font-size: 17px;"  class="fa-brands fa-audible"></i>Olanaklar</p>
+          </a>
+
+        </li> 
+        <li class=" nav-item">
+          <a    
+            class="nav-link" routerLink="resimTipi" 
+          >
+            <p style="font-size: 15px; margin: 0;;
+            line-height: 30px;
+            font-size: 15px;
+            position: relative;
+            display: block;
+            height: auto;
+            white-space: nowrap;" ><i style="margin-right: 10px; font-size: 17px;"  class="fa-brands fa-audible"></i>Resim Tipi</p>
+          </a>
+
+        </li> 
+        <li class=" nav-item">
+          <a    
+            class="nav-link" routerLink="service" 
+          >
+            <p style="font-size: 15px; margin: 0;;
+            line-height: 30px;
+            font-size: 15px;
+            position: relative;
+            display: block;
+            height: auto;
+            white-space: nowrap;" ><i style="margin-right: 10px; font-size: 17px;"  class="fa-brands fa-audible"></i>Service</p>
+          </a>
+
+        </li> 
+
+			</ul>
+		  </div>
+		</li>
+	  </ul>
+  </div>
+</div>
